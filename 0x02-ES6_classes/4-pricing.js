@@ -12,7 +12,7 @@ export default class Pricing {
 
   set amount(value) {
     if (typeof value !== 'number') {
-        throw TypeError('amount must be a Number');
+      throw TypeError('amount must be a Number');
     }
     this._amount = value; // eslint-disable-line
   }
@@ -22,11 +22,8 @@ export default class Pricing {
   }
 
   set currency(value) {
-    if (!currency instanceof Currency) {
-        throw TypeError('currency must be a Currency');
     this._currency = value; // eslint-disable-line
   }
-}
 
   displayFullPrice() {
     return `${this.amount} ${this.currency.displayFullCurrency()}`;
