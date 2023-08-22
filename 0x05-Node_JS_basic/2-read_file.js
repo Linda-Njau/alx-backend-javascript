@@ -7,7 +7,7 @@ function countStudents(path) {
 
   const data = fs.readFileSync(path, 'utf8');
   const students = data.split('\n')
-    .map((student) => student.split(','))
+    .map((student) => student.split(',').map((field) => field.trim()))
     .filter((student) => student.length === 4 && student[0] !== 'firstname')
     .map((student) => ({
       firstName: student[0],
@@ -24,7 +24,7 @@ function countStudents(path) {
     .map((student) => student.firstName);
   console.log(`Number of students: ${students.length}`);
   console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`);
-  console.log(`Number of students in  SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
+  console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
 }
 
 module.exports = countStudents;
