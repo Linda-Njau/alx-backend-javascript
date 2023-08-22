@@ -8,7 +8,7 @@ const hostname = '127.0.0.1';
 app.get('/', (req, res) => { //eslint-disable-line
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.send('Hello Holberton Scho0l!');
+  res.send('Hello Holberton School!');
 });
 
 app.get('/students', async (req, res) => { //eslint-disable-line
