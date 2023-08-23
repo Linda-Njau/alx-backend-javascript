@@ -23,7 +23,7 @@ app.get('/students', async (req, res) => { //eslint-disable-line
 
     res.type('text/plain').send(responseText);
   } catch (error) {
-    res.status(500).send(`Error: ${error.message}`);
+    res.status(500).send('This is the list of our students\nCannot load the database');
   }
 });
 app.listen(port, () => { //eslint-disable-line
