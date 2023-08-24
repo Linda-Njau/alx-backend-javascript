@@ -1,15 +1,14 @@
-const getPaymentTokenFromAPI = require('./6-payment_token.js');
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
+const { expect } = require('chai');
 
-chai.use(chaiAsPromised)
-const { expect } = chai;
+const getPaymentTokenFromApi = require('./6-payment_token');
 
-describe('getPaymentTokenFromAPI', () => {
-    it('should resolve with correct data when success is true', (done) => {
-        const success = true;
-        const promise = getPaymentTokenFromAPI(success);
-        expect(promise).to.eventually.deep.equal({data: 'Successful response from the API' })
-          .notify(done);
-    });
+describe('getPaymentTokenFromApi', () => {
+  it('checks output of getPaymentTokenFromApi with true as success', (done) => {
+    getPaymentTokenFromApi(true)
+      .then((res) => {
+        expect(res).to.include({ data: 'Successful response from the API' });
+        done();
+      })
+      .catch((err) => done(err));
+  });
 });
