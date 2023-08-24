@@ -1,6 +1,6 @@
-function getPaymentTokenFromApi(success) {
+function getPaymentTokenFromAPI(success) {
     if(success) {
         return Promise.resolve ({data: 'Successful response from the API' });
     }
 }
-module.exports = { getPaymentTokenFromApi };
+module.exports = getPaymentTokenFromAPI;
